@@ -1,0 +1,69 @@
+name: promptcraft
+description: AI Prompt Generator Platform
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Material 3
+  google_fonts: ^6.1.0
+
+  # State Management
+  flutter_riverpod: ^2.4.9
+  riverpod_annotation: ^2.3.3
+
+  # Routing
+  go_router: ^14.0.0
+
+  # Networking
+  dio: ^5.4.0
+
+  # Code Generation
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.8.1
+
+  # Storage
+  flutter_secure_storage: ^9.0.0
+  hive_flutter: ^1.1.0
+
+  # UI
+  shimmer: ^3.0.0
+  flutter_animate: ^4.5.0
+  cached_network_image: ^3.3.1
+  flutter_svg: ^2.0.10+1
+  lottie: ^3.0.0
+  fluttertoast: ^8.2.4
+
+  # Utils
+  intl: ^0.19.0
+  url_launcher: ^6.2.2
+  share_plus: ^7.2.2
+  clipboard: ^0.1.3
+  flutter_html: ^3.0.0-beta.2
+  markdown: ^7.2.1
+  flutter_markdown: ^0.6.22
+
+  # Localization
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  build_runner: ^2.4.8
+  freezed: ^2.4.6
+  json_serializable: ^6.7.1
+  riverpod_generator: ^2.3.9
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animations/
