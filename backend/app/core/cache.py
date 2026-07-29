@@ -5,10 +5,18 @@ redis_client: Optional[Any] = None
 
 async def init_cache() -> None:
     global redis_client
+    redis_url = None
+    try:
+        from app.core.config import settings
+        redis_url = settings.redis_url
+    except Exception:
+        pass
+    if not redis_url:
+        redis_client = None
+        return
     try:
         from redis.asyncio import Redis
-        from app.core.config import settings
-        redis_client = Redis.from_url(settings.redis_url, decode_responses=True)
+        redis_client = Redis.from_url(redis_url, decode_responses=True)
     except ImportError:
         redis_client = None
 
