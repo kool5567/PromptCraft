@@ -15,6 +15,7 @@
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10,
     "healthcheckPath": "/health",
-    "healthcheckTimeout": 90
+    "healthcheckTimeout": 90,
+    "startCommand": "python run.py"
   }
 }
