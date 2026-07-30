@@ -9,6 +9,8 @@ from app.repositories.base import BaseRepository
 
 
 class SiteSettingsRepository(BaseRepository[SiteSetting]):
+    _model = SiteSetting
+
     async def get_by_key(self, key: str) -> Optional[SiteSetting]:
         stmt = select(SiteSetting).where(SiteSetting.key == key)
         result = await self.db.execute(stmt)

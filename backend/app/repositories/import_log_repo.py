@@ -9,6 +9,8 @@ from app.repositories.base import BaseRepository
 
 
 class ImportLogRepository(BaseRepository[ImportLog]):
+    _model = ImportLog
+
     async def get_by_user(self, user_id: int) -> list[ImportLog]:
         stmt = (
             select(ImportLog)

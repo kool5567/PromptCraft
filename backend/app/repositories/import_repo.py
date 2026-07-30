@@ -6,6 +6,8 @@ from app.models.import_job import ImportJob
 
 
 class ImportRepository(BaseRepository[ImportJob]):
+    _model = ImportJob
+
     def __init__(self, session: AsyncSession):
         super().__init__(ImportJob, session)
 

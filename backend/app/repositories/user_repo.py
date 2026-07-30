@@ -11,6 +11,8 @@ from app.repositories.base import BaseRepository
 
 
 class UserRepository(BaseRepository[User]):
+    _model = User
+
     async def get_by_email(self, email: str) -> Optional[User]:
         stmt = select(User).where(User.email == email)
         result = await self.db.execute(stmt)

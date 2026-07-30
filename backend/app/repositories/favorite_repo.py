@@ -8,6 +8,8 @@ from app.repositories.base import BaseRepository
 
 
 class FavoriteRepository(BaseRepository[Favorite]):
+    _model = Favorite
+
     async def get_user_favorites(
         self, user_id: int, skip: int = 0, limit: int = 100
     ) -> list[Favorite]:

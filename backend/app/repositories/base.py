@@ -1,4 +1,4 @@
-from typing import Generic, TypeVar, Type, Optional, Any, get_args, get_origin
+from typing import Generic, TypeVar, Type, Optional, Any
 from uuid import UUID
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, update, delete, func
@@ -10,20 +10,10 @@ ModelType = TypeVar("ModelType", bound=Base)
 
 
 class BaseRepository(Generic[ModelType]):
-    _model: Type[ModelType] | None = None
+    _model: type[ModelType] | None = None
 
-    def __init_subclass__(cls, **kwargs):
-        super().__init_subclass__(**kwargs)
-        for base in getattr(cls, "__orig_bases__", []):
-            origin = get_origin(base)
-            if origin is BaseRepository:
-                args = get_args(base)
-                if args:
-                    cls._model = args[0]
-                    return
-
-    def __init__(self, session: AsyncSession, model: Type[ModelType] | None = None):
-        self.model = model or self._model
+    def __init__(self, session: AsyncSession):
+        self.model = self._model
         self.session = session
         self.db = session
 

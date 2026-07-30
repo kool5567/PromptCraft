@@ -9,6 +9,8 @@ from app.repositories.base import BaseRepository
 
 
 class RatingRepository(BaseRepository[PromptRating]):
+    _model = PromptRating
+
     async def get_user_rating(self, user_id: UUID, prompt_id: UUID) -> Optional[PromptRating]:
         stmt = select(PromptRating).where(
             PromptRating.user_id == user_id,

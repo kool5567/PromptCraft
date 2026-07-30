@@ -7,6 +7,8 @@ from app.models.ai_model import AiModel
 
 
 class AiModelRepository(BaseRepository[AiModel]):
+    _model = AiModel
+
     def __init__(self, session: AsyncSession):
         super().__init__(AiModel, session)
 

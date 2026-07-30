@@ -9,6 +9,8 @@ from app.repositories.base import BaseRepository
 
 
 class TagRepository(BaseRepository[Tag]):
+    _model = Tag
+
     async def get_by_slug(self, slug: str) -> Optional[Tag]:
         stmt = select(Tag).where(Tag.slug == slug)
         result = await self.db.execute(stmt)

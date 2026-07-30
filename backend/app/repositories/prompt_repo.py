@@ -12,6 +12,8 @@ from app.repositories.base import BaseRepository
 
 
 class PromptRepository(BaseRepository[Prompt]):
+    _model = Prompt
+
     async def get_public_prompts(
         self,
         skip: int = 0,

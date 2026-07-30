@@ -11,6 +11,8 @@ from app.repositories.base import BaseRepository
 
 
 class CategoryRepository(BaseRepository[Category]):
+    _model = Category
+
     async def get_by_slug(self, slug: str) -> Optional[Category]:
         stmt = select(Category).where(Category.slug == slug)
         result = await self.db.execute(stmt)

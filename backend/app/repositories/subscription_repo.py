@@ -12,6 +12,8 @@ from app.repositories.base import BaseRepository
 
 
 class SubscriptionRepository(BaseRepository[Subscription]):
+    _model = Subscription
+
     async def get_by_user(self, user_id: UUID) -> Optional[Subscription]:
         stmt = select(Subscription).where(Subscription.user_id == user_id)
         result = await self.db.execute(stmt)
@@ -44,6 +46,8 @@ class SubscriptionRepository(BaseRepository[Subscription]):
 
 
 class UsageQuotaRepository(BaseRepository[UsageQuota]):
+    _model = UsageQuota
+
     async def get_or_create(self, user_id: uuid.UUID, usage_date: datetime) -> UsageQuota:
         from sqlalchemy import select
         stmt = select(UsageQuota).where(

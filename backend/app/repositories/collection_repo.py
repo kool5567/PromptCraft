@@ -7,6 +7,8 @@ from app.models.collection import Collection, CollectionPrompt
 
 
 class CollectionRepository(BaseRepository[Collection]):
+    _model = Collection
+
     def __init__(self, session: AsyncSession):
         super().__init__(Collection, session)
 

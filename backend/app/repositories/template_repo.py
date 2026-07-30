@@ -10,6 +10,8 @@ from app.repositories.base import BaseRepository
 
 
 class TemplateRepository(BaseRepository[Template]):
+    _model = Template
+
     async def get_user_templates(self, user_id: int) -> list[Template]:
         stmt = (
             select(Template)
