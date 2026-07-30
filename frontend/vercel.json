@@ -1,0 +1,7 @@
+{
+  "buildCommand": "chmod +x build.sh && ./build.sh",
+  "outputDirectory": "build/web",
+  "framework": null,
+  "devCommand": "flutter run -d web-server --web-port 3000",
+  "installCommand": ""
+}
