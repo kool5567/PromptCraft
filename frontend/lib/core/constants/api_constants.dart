@@ -1,5 +1,5 @@
 class ApiConstants {
-  static const String baseUrl = 'http://localhost:8000';
+  static const String baseUrl = 'https://web-production-4a7775.up.railway.app';
   static const String apiPrefix = '/api/v1';
 
   static const String login = '$apiPrefix/auth/login';

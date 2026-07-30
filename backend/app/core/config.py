@@ -64,8 +64,8 @@ class Settings(BaseSettings):
     email_from: str = "noreply@promptcraft.com"
 
     app_name: str = "PromptCraft"
-    app_url: str = "http://localhost:8000"
-    frontend_url: str = "http://localhost:5173"
+    app_url: str = "https://web-production-4a7775.up.railway.app"
+    frontend_url: str = "https://promptcraft.vercel.app"
     environment: str = "development"
     debug: bool = True
     log_level: str = "DEBUG"
@@ -75,7 +75,7 @@ class Settings(BaseSettings):
     rate_limit_per_minute: int = 100
     rate_limit_auth_per_minute: int = 20
 
-    cors_origins: list[str] = ["http://localhost:5173", "http://localhost:3000"]
+    cors_origins: list[str] = ["http://localhost:5173", "http://localhost:3000", "https://web-production-4a7775.up.railway.app", "https://promptcraft.vercel.app"]
 
     free_daily_generations: int = 5
     free_max_prompts: int = 50
