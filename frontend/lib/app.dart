@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'core/theme/app_theme.dart';
-import 'core/storage/secure_storage.dart';
-import 'data/repositories/auth_repository.dart';
+import 'features/core/theme/app_theme.dart';
+import 'features/core/storage/secure_storage.dart';
+import 'features/data/repositories/auth_repository.dart';
 import 'features/auth/presentation/screens/login_screen.dart';
 import 'features/auth/presentation/screens/register_screen.dart';
 import 'features/home/presentation/screens/home_screen.dart';
@@ -47,8 +47,8 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/', builder: (_, __) => const HomeScreen()),
       GoRoute(path: '/prompts', builder: (_, __) => const PromptListScreen()),
       GoRoute(path: '/prompts/new', builder: (_, __) => const CreatePromptScreen()),
-      GoRoute(path: '/prompts/:id', builder: (_, state) => PromptDetailScreen(promptId: state.pathParameters['id']!)),
-      GoRoute(path: '/prompts/:id/edit', builder: (_, state) => EditPromptScreen(promptId: state.pathParameters['id']!)),
+GoRoute(path: '/prompts/:id', builder: (_, state) => PromptDetailScreen(id: state.pathParameters['id']!)),
+GoRoute(path: '/prompts/:id/edit', builder: (_, state) => EditPromptScreen(promptId: state.pathParameters['id']!)),
       GoRoute(path: '/generator', builder: (_, __) => const GeneratorScreen()),
       GoRoute(path: '/library', builder: (_, __) => const LibraryScreen()),
       GoRoute(path: '/collections', builder: (_, __) => const CollectionsScreen()),

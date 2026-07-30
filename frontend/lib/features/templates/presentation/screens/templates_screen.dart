@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/constants/api_constants.dart';
-import '../../../../core/network/dio_client.dart';
-import '../../../../core/utils/helpers.dart';
-import '../../../../data/datasources/api_service.dart';
-import '../../../../domain/entities/prompt_model.dart';
+import '../../../core/constants/api_constants.dart';
+import '../../../core/network/dio_client.dart';
+import '../../../core/utils/helpers.dart';
+import '../../../data/datasources/api_service.dart';
+import '../../../domain/entities/prompt_model.dart';
 
 final templatesProvider = FutureProvider((ref) async {
   final api = ApiService(ref.read(dioClientProvider));

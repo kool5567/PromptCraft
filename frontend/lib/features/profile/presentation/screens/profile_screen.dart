@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../core/constants/api_constants.dart';
-import '../../../../core/network/dio_client.dart';
-import '../../../../data/repositories/auth_repository.dart';
-import '../../../../domain/entities/user_model.dart';
+import '../../../core/constants/api_constants.dart';
+import '../../../core/network/dio_client.dart';
+import '../../../data/repositories/auth_repository.dart';
+import '../../../domain/entities/user_model.dart';
 
 final _currentUserProvider = FutureProvider.autoDispose<UserModel?>((ref) {
   return ref.read(authRepositoryProvider).getProfile();

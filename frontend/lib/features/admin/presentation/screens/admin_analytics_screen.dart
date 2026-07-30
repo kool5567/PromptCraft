@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dio/dio.dart';
 
-import '../../../../core/constants/api_constants.dart';
-import '../../../../core/network/dio_client.dart';
-import '../../../../core/theme/app_theme.dart';
-import '../../../../core/utils/helpers.dart';
+import '../../../core/constants/api_constants.dart';
+import '../../../core/network/dio_client.dart';
+import '../../../core/theme/app_theme.dart';
+import '../../../core/utils/helpers.dart';
 import '../widgets/admin_drawer.dart';
 
 class AdminAnalyticsScreen extends ConsumerStatefulWidget {
