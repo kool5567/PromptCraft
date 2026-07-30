@@ -30,6 +30,10 @@ class Helpers {
     return count.toString();
   }
 
+  static String errorMessage(dynamic e) {
+    return e.toString();
+  }
+
   static Future<bool> showConfirmDialog(BuildContext context, String title, String message) async {
     final result = await showDialog<bool>(
       context: context,

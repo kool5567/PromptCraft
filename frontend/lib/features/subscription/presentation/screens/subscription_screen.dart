@@ -15,8 +15,8 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
 
   final _plans = [
     {'name': 'Basic', 'price': '\$9.99', 'period': '/شهر', 'color': Colors.blue, 'features': ['50 توليد/يوم', '500 برومبت', 'قوالب كاملة', 'استيراد GitHub']},
-    {'name': 'Pro', 'price': '\$19.99', 'period': '/شهر', 'color': AppTheme.primaryColor, 'features': ['غير محدود', 'برومبتات غير محدودة', 'برومبتات مميزة', 'API Access', 'دعم أولوية']},
-    {'name': 'Enterprise', 'price': '\$49.99', 'period': '/شهر', 'color': AppTheme.accentColor, 'features': ['كل شي في Pro', '+10 حسابات فريق', 'علامة تجارية مخصصة', 'دعم 24/7']},
+    {'name': 'Pro', 'price': '\$19.99', 'period': '/شهر', 'color': AppColors.primary, 'features': ['غير محدود', 'برومبتات غير محدودة', 'برومبتات مميزة', 'API Access', 'دعم أولوية']},
+    {'name': 'Enterprise', 'price': '\$49.99', 'period': '/شهر', 'color': AppColors.secondary, 'features': ['كل شي في Pro', '+10 حسابات فريق', 'علامة تجارية مخصصة', 'دعم 24/7']},
   ];
 
   @override
@@ -38,7 +38,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppTheme.primaryColor,
+                  backgroundColor: AppColors.primary,
                   foregroundColor: Colors.white,
                   minimumSize: const Size(double.infinity, 56),
                 ),
@@ -91,7 +91,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
                     padding: const EdgeInsets.only(bottom: 6),
                     child: Row(
                       children: [
-                        Icon(Icons.check_circle, size: 18, color: AppTheme.successColor),
+                        Icon(Icons.check_circle, size: 18, color: AppColors.secondary),
                         const SizedBox(width: 8),
                         Text(f),
                       ],
@@ -107,7 +107,7 @@ class _SubscriptionScreenState extends ConsumerState<SubscriptionScreen> {
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
-                    color: AppTheme.accentColor,
+                    color: AppColors.secondary,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: const Text('الأكثر طلباً', style: TextStyle(color: Colors.white, fontSize: 10)),

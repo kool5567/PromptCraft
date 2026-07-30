@@ -190,7 +190,7 @@ class _AdminDashboardScreenState extends ConsumerState<AdminDashboardScreen> {
       children: [
         _actionChip(Icons.add, 'إضافة نموذج AI', () => context.go('/admin/models')),
         _actionChip(Icons.sync, 'مزامنة GitHub', () => _syncGithub()),
-        _actionChip(Icons.seed, 'بذر البيانات', () => _seedData()),
+        _actionChip(Icons.eco, 'بذر البيانات', () => _seedData()),
       ],
     );
   }

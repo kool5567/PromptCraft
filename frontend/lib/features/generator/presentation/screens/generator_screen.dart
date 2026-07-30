@@ -46,17 +46,17 @@ class _GeneratorScreenState extends ConsumerState<GeneratorScreen> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: AppTheme.primaryColor.withOpacity(0.1),
+                color: AppColors.primary.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Row(
                 children: [
-                  const Icon(Icons.info_outlined, color: AppTheme.primaryColor),
+                  const Icon(Icons.info_outlined, color: AppColors.primary),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
                       'وصف ما تريد، وسيقوم الذكاء الاصطناعي بإنشاء برومبت احترافي لك',
-                      style: TextStyle(color: AppTheme.primaryColor),
+                      style: TextStyle(color: AppColors.primary),
                     ),
                   ),
                 ],

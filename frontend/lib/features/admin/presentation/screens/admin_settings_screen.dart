@@ -122,9 +122,9 @@ class _AdminSettingsScreenState extends ConsumerState<AdminSettingsScreen> {
                   ]),
                   const SizedBox(height: 16),
                   _buildSection('الحدود والإعدادات', [
-                    TextField(controller: _genPerDayCtrl, decoration: const InputDecoration(labelText: 'عدد التوليدات المسموحة يومياً', prefixIcon: Icon(Icons.bolt), keyboardType: TextInputType.number)),
+                    TextField(controller: _genPerDayCtrl, keyboardType: TextInputType.number, decoration: const InputDecoration(labelText: 'عدد التوليدات المسموحة يومياً', prefixIcon: Icon(Icons.bolt))),
                     const SizedBox(height: 12),
-                    TextField(controller: _maxPromptsCtrl, decoration: const InputDecoration(labelText: 'الحد الأقصى للبرومبتات لكل مستخدم', prefixIcon: Icon(Icons.auto_awesome), keyboardType: TextInputType.number)),
+                    TextField(controller: _maxPromptsCtrl, keyboardType: TextInputType.number, decoration: const InputDecoration(labelText: 'الحد الأقصى للبرومبتات لكل مستخدم', prefixIcon: Icon(Icons.auto_awesome))),
                   ]),
                   const SizedBox(height: 16),
                   _buildSection('مفاتيح API', [
