@@ -1,8 +1,9 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from datetime import datetime
 
 
 class VariableSchema(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     name: str
     type: str = "text"
     default: str | None = None
@@ -11,6 +12,7 @@ class VariableSchema(BaseModel):
 
 
 class PromptCreateRequest(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     title: str = Field(min_length=1, max_length=255)
     title_ar: str | None = None
     content: str = Field(min_length=1)
@@ -28,6 +30,8 @@ class PromptCreateRequest(BaseModel):
 
 
 class PromptUpdateRequest(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
+
     title: str | None = Field(None, min_length=1, max_length=255)
     title_ar: str | None = None
     content: str | None = Field(None, min_length=1)
@@ -46,6 +50,7 @@ class PromptUpdateRequest(BaseModel):
 
 
 class PromptVersionResponse(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     id: str
     prompt_id: str
     content: str
@@ -57,12 +62,14 @@ class PromptVersionResponse(BaseModel):
 
 
 class PromptTagResponse(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     id: str
     name: str
     slug: str
 
 
 class PromptResponse(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     id: str
     user_id: str
     title: str
@@ -90,6 +97,7 @@ class PromptResponse(BaseModel):
 
 
 class CopyPromptRequest(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     collection_id: str | None = None
 
 

@@ -1,7 +1,8 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class AiModelCreateRequest(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     name: str = Field(min_length=1, max_length=100)
     slug: str = Field(min_length=1, max_length=100)
     description: str | None = None
@@ -13,6 +14,7 @@ class AiModelCreateRequest(BaseModel):
 
 
 class AiModelUpdateRequest(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     name: str | None = Field(None, min_length=1, max_length=100)
     description: str | None = None
     provider: str | None = Field(None, min_length=1, max_length=100)
@@ -24,6 +26,7 @@ class AiModelUpdateRequest(BaseModel):
 
 
 class AiModelResponse(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
     id: str
     name: str
     slug: str
