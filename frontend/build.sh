@@ -8,5 +8,6 @@ export PATH="$PATH:/tmp/flutter/bin"
 export FLUTTER_ROOT="/tmp/flutter"
 
 flutter config --enable-web --no-analytics
+flutter create --platforms web .
 flutter pub get
 flutter build web --release
