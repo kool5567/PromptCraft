@@ -59,6 +59,7 @@ class User(Base):
     ratings: Mapped[list["PromptRating"]] = relationship("PromptRating", back_populates="user", cascade="all, delete-orphan")
     subscription: Mapped["Subscription"] = relationship("Subscription", back_populates="user", uselist=False, cascade="all, delete-orphan")
     usage_quotas: Mapped[list["UsageQuota"]] = relationship("UsageQuota", back_populates="user", cascade="all, delete-orphan")
+    templates: Mapped[list["Template"]] = relationship("Template", back_populates="user", cascade="all, delete-orphan")
 
 
 class Profile(Base):

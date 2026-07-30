@@ -21,7 +21,7 @@ class TemplateCreate(BaseModel):
     content: str
     ai_provider: Optional[str] = Field(default=None, max_length=100)
     ai_model: Optional[str] = Field(default=None, max_length=100)
-    category_id: Optional[int] = None
+    category_id: Optional[UUID] = None
     is_public: Optional[bool] = True
     variables: list[TemplateVariableCreate] = []
 
@@ -32,7 +32,7 @@ class TemplateUpdate(BaseModel):
     content: Optional[str] = None
     ai_provider: Optional[str] = Field(default=None, max_length=100)
     ai_model: Optional[str] = Field(default=None, max_length=100)
-    category_id: Optional[int] = None
+    category_id: Optional[UUID] = None
     is_public: Optional[bool] = None
     variables: Optional[list[TemplateVariableCreate]] = None
 
@@ -40,8 +40,8 @@ class TemplateUpdate(BaseModel):
 class TemplateVariableResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
-    id: int
-    template_id: int
+    id: UUID
+    template_id: UUID
     name: str
     variable_key: str
     default_value: Optional[str] = None
@@ -53,18 +53,17 @@ class TemplateVariableResponse(BaseModel):
 class TemplateResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
-    id: int
-    uuid: UUID
+    id: UUID
     title: str
     description: Optional[str] = None
     content: str
     ai_provider: Optional[str] = None
     ai_model: Optional[str] = None
-    category_id: Optional[int] = None
+    category_id: Optional[UUID] = None
     category: Optional[CategoryResponse] = None
     is_public: bool
     usage_count: int
     variables: list[TemplateVariableResponse] = []
-    user_id: int
+    user_id: UUID
     created_at: datetime
     updated_at: datetime
