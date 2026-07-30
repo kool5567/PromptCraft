@@ -37,7 +37,6 @@ final routerProvider = Provider<GoRouter>((ref) {
     redirect: (context, state) async {
       final loggedIn = await authRepo.isLoggedIn();
       final isAuthRoute = state.matchedLocation.startsWith('/login') || state.matchedLocation.startsWith('/register');
-      if (!loggedIn && !isAuthRoute) return '/login';
       if (loggedIn && isAuthRoute) return '/';
       return null;
     },
