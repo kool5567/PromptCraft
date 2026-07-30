@@ -10,7 +10,7 @@ ModelType = TypeVar("ModelType", bound=Base)
 
 
 class BaseRepository(Generic[ModelType]):
-    _model: Type[ModelType]
+    _model: Type[ModelType] | None = None
 
     def __init_subclass__(cls, **kwargs):
         super().__init_subclass__(**kwargs)
@@ -22,8 +22,8 @@ class BaseRepository(Generic[ModelType]):
                     cls._model = args[0]
                     return
 
-    def __init__(self, session: AsyncSession):
-        self.model = self._model
+    def __init__(self, session: AsyncSession, model: Type[ModelType] | None = None):
+        self.model = model or self._model
         self.session = session
         self.db = session
 
